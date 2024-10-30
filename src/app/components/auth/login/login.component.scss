@@ -1,0 +1,110 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Evita el desplazamiento vertical */
+}
+
+.login-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Elimina cualquier margen */
+}
+
+.login-page .container-fluid {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    //imagen
+    background-image: url('/assets/images/banner-login.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.right-side {
+    background-color: #fff;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .left-side {
+        display: none;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.custom-btn {
+    background-color: rgb(89, 79, 160);
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: rgb(89, 79, 160) !important;
+    opacity: 0.9;
+}
+
+.button-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 18px;
+}
+
+@media (max-width: 1024px) {
+    .left-side {
+        display: none;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .text-container {
+        margin-top: 8px; /* Ajusta el margen superior */
+    }
+}
+
+@media (max-width: 768px) {
+    .right-side {
+        padding: 0.5rem; /* Reduce el relleno */
+    }
+
+    .text-container {
+        margin-top: 10px; /* Restaura el margen superior */
+    }
+}

@@ -1,0 +1,267 @@
+
+<div *ngIf="loading" class="loader-overlay">
+  <div class="loader"></div>
+</div>
+
+<div class="container-fluid py-4 main-container">
+
+  <div class="campaign-message" *ngIf="user">
+  {{ user.displayName }}, estás en campaña {{ user.campana }}
+  </div>
+
+  <!-- Paso a Paso -->
+  <div class="step-container mb-4">
+    <div class="step" [class.active]="currentStep === 1" (click)="setStep(1)">
+      <div class="circle">1</div>
+      <div class="label">PEDIDO</div>
+    </div>
+    <div class="step" [class.active]="currentStep === 2" (click)="setStep(2)">
+      <div class="circle">2</div>
+      <div class="label">RESUMEN</div>
+    </div>
+  </div>
+
+  <!-- Paso 1: Formulario para ingresar cédula y acciones -->
+  <div class="row" *ngIf="currentStep === 1">
+    <!-- Campo para ingresar cédula y botón para validar -->
+    <div class="col-12 mb-3"> 
+      <label for="cedulaCliente" class="fw-bold">Digite el número de cédula para validar el cupo:</label>
+      <form [formGroup]="pedidoForm" class="d-flex w-100 flex-column flex-md-row">
+        <input id="cedulaCliente" formControlName="cedulaCliente" type="text" class="form-control me-2 input-cedula mb-2 mb-md-0" placeholder="Ingrese su cédula">
+        
+        <button class="btn btn-success fw-bold custom-button button-green me-2" (click)="validarCupoDisponible()">VALIDAR CUPO DISPONIBLE</button>
+        
+        <button type="button" class="btn btn-secondary fw-bold custom-button button-gray" (click)="resetearTodo()">REINICIAR</button>
+      </form>
+    </div>
+    <div class="col-12">
+      <div class="input-section p-3 mb-4">
+        <h5 class="mb-3">Agregar Pedido</h5>
+        <form [formGroup]="pedidoForm" class="d-flex flex-column flex-md-row align-items-center">
+          <div class="d-flex flex-column flex-md-row w-49">
+            <label for="codigoPrenda" class="me-3 fw-bold mb-2 mb-md-0">Código de la Prenda:</label>
+            <input id="codigoPrenda" formControlName="codigoPrenda" type="text" class="form-control me-3 mb-2 w-100 w-md-25" placeholder="Ingrese el código" [disabled]="camposBloqueados">
+            <div *ngIf="pedidoForm.controls.codigoPrenda.invalid && pedidoForm.controls.codigoPrenda.touched" class="error-message">
+              Código inválido
+            </div>
+          </div>
+          
+          <div class="d-flex flex-column flex-md-row w-49">
+            <label for="cantidad" class="me-3 fw-bold mb-2 mb-md-0">Cantidad:</label>
+            <input id="cantidad" formControlName="cantidad" type="number" class="form-control me-3 mb-2 w-100 w-md-25" placeholder="Ingrese la cantidad" [disabled]="camposBloqueados">
+            <div *ngIf="pedidoForm.controls.cantidad.invalid && pedidoForm.controls.cantidad.touched" class="error-message">
+              Cantidad inválida
+            </div>
+          </div>
+          
+          <button class="btn btn-success fw-bold custom-button button-green" (click)="agregarProducto()" [disabled]="camposBloqueados">
+            + ADICIONAR PRODUCTO
+          </button>
+        </form>
+      </div>
+    </div>
+    
+
+    <!-- Tabla de productos -->
+    <div class="col-12 table-container">
+      <table class="table table-bordered table-hover table-striped text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Código</th>
+            <th>Página Catálogo</th>
+            <th>Descripción</th>
+            <th>Referencia</th>
+            <th>Cantidad Solicitadas</th>
+            <th>Cantidad Asignadas</th>
+            <th>Valor Unitario (Catálogo IVA)</th>
+            <th>Valor Unitario (Ejecutiva IVA)</th>
+            <th>Descuento Total</th>
+            <th>Valor Total (Ejecutiva IVA)</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of dataSource; let i = index">
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.paginaCatalogo }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.referencia }}</td>
+            <td>{{ producto.cantidadSolicitada }}</td>
+            <td>{{ producto.cantidadAsignada }}</td>
+            <td>{{ producto.valorUnitarioCatalogo | currency }}</td>
+            <td>{{ producto.valorUnitarioEjecutiva | currency }}</td>
+            <td>{{ producto.descuento | currency }}</td>
+            <td>{{ producto.valorTotal | currency }}</td>
+            <td >
+              <a class="accion-centered" (click)="eliminarProducto(i)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="fw-bold text-center">TOTAL MERCANCÍA</td>
+            <td>{{ totalCantidadSolicitada }}</td>
+            <td>{{ totalCantidadAsignada }}</td>
+            <td></td>
+            <td></td>
+            <td>{{ totalDescuento | currency }}</td>
+            <td>{{ totalValorTotal | currency }}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+
+    <div class="col-12 text-center mt-3">
+      <button class="btn btn-primary fw-bold custom-button-black button-black smaller-centered-button" (click)="setStep(2)">
+        CONTINUAR
+      </button>
+    </div>
+  </div>
+
+  <!-- Paso 2: Resumen -->
+  <div class="row" *ngIf="currentStep === 2">
+    <div class="col-12 mb-4">
+      <h5 class="mb-3">Ingresa la dirección de envío</h5>
+      <form [formGroup]="checkoutForm" class="custom-form-section p-3 mb-4">
+    
+        <div class="form-group col-12 mb-3">
+          <label for="departamento" class="fw-bold">Departamento:</label>
+          <select
+            id="departamento"
+            name="departamento"
+            class="form-control"
+            [class.is-invalid]="checkoutForm.controls['departamento'].touched && checkoutForm.controls['departamento'].invalid"
+            [formControl]="checkoutForm.controls['departamento']"
+            (change)="onDepartamentoSeleccionado($event.target.value)"
+          >
+            <option value="" disabled selected>Seleccione un departamento</option>
+            <option *ngFor="let depto of departamentos" [value]="depto.departamento">{{ depto.departamento }}</option>
+          </select>
+          <div *ngIf="checkoutForm.controls.departamento.touched && checkoutForm.controls.departamento.errors?.required"
+            class="text text-danger">
+          </div>
+        </div>
+    
+        <div class="form-group col-12 mb-3">
+          <label for="ciudad" class="fw-bold">Ciudad:</label>
+          <select
+            id="ciudad"
+            name="ciudad"
+            class="form-control"
+            [class.is-invalid]="checkoutForm.controls['ciudad'].touched && checkoutForm.controls['ciudad'].invalid"
+            [formControl]="checkoutForm.controls['ciudad']"
+          >
+            <option value="" disabled selected>Seleccione una ciudad</option>
+            <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+          </select>
+          <div *ngIf="checkoutForm.controls.ciudad.touched && checkoutForm.controls.ciudad.errors?.required"
+            class="text text-danger">
+          </div>
+        </div>
+    
+        <div class="form-group col-12">
+          <label for="direccionCliente" class="fw-bold">Dirección:</label>
+          <input
+            id="direccionCliente"
+            formControlName="direccionCliente"
+            type="text"
+            class="form-control mb-3"
+            [class.is-invalid]="checkoutForm.controls['direccionCliente'].touched && checkoutForm.controls['direccionCliente'].invalid"
+            placeholder="Ingrese su dirección"
+          >
+          <div
+            *ngIf="checkoutForm.controls.direccionCliente.touched && checkoutForm.controls.direccionCliente.errors?.required"
+            class="text text-danger">
+          </div>
+        </div>
+    
+      </form>
+    </div>
+
+    <!-- Tabla de Otros Cobros y Servicios -->
+    <div class="input-section p-3 mb-4">
+      <div class="otros-cobros-servicios mt-4">
+        <h5 class="fw-bold text-center mb-3">RESUMEN DEL PEDIDO</h5>
+        <!-- Se agrega un contenedor con clase 'table-responsive' -->
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>VALOR MERCANCÍA SIN IVA</td>
+                <td class="text-end">{{ valorMercanciaSinIVA | currency }}</td>
+              </tr>
+              <tr>
+                <td>VALOR BASE IVA</td>
+                <td class="text-end">{{ valorBaseIVA | currency }}</td>
+              </tr>
+              <tr>
+                <td>VALOR IVA</td>
+                <td class="text-end">{{ valorIVA | currency }}</td>
+              </tr>
+              <tr>
+                <td>SUBTOTAL</td>
+                <td class="text-end">{{ subtotal | currency }}</td>
+              </tr>
+              <tr>
+                <td>VALOR FLETE ASUMIDO POR SU CUENTA</td>
+                <td class="text-end">{{ valorFlete | currency }}</td>
+              </tr>
+              <tr class="table-success">
+                <td class="fw-bold">VALOR TOTAL FACTURA</td>
+                <td class="fw-bold text-end">{{ valorTotalFactura | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 mb-4">
+      <h5 class="mb-3">Simulador de Crédito</h5>
+      <div class="input-section p-3 mb-4">
+        <h6>Valor a financiar: {{ valorFinanciar | currency }}</h6>
+        <p>Tasa mensual: {{ tasaMensual }}% | Tasa anual: {{ tasaAnual }}% E.A.</p>
+      </div>
+
+        
+        <div class="credit-options d-flex">
+          <div *ngFor="let cuota of cuotasCredito" class="credit-option">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="cuotasCredito" id="cuotas{{ cuota.meses }}"
+                [value]="cuota">
+              <label class="form-check-label" for="cuotas{{ cuota.meses }}">
+                <strong>{{ cuota.d_modalidad }}</strong><br>
+                Total Crédito: {{ cuota.totalCredito | currency }}<br>
+                Cuota: {{ cuota.cuota | currency }}<br>
+                Intereses: {{ cuota.intereses | currency }}<br>
+                Garantía: {{ cuota.garantia | currency }}
+              </label>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+
+    <div class="col-12 text-center mt-3 d-flex justify-content-center">
+      <!-- Botón para volver al paso 1 (PEDIDO) -->
+      <button class="btn btn-secondary fw-bold custom-button-black button-black smaller-button me-2" (click)="setStep(1)">
+        VOLVER AL PEDIDO
+      </button>
+      
+      <!-- Botón para continuar al checkout -->
+      <button class="btn btn-primary fw-bold custom-button-black button-black smaller-button" (click)="validarConCliente()">
+        VALIDAR CON CLIENTE
+      </button>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/fbd758ba-ce47-4584-9d12-46332bf23399/resourceGroups/RGPuntosLeonisa/providers/Microsoft.Web/sites/sellercentermsauc",
+    "appService.deploySubpath": "dist"
+}

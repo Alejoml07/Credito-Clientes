@@ -1,0 +1,671 @@
+.main-container {
+  min-height: 100vh;
+  // background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.input-section h6 {
+  font-size: 1rem; /* Aumenta el tamaño de la fuente */
+  color: #000000; /* Color negro */
+}
+
+.input-section p {
+  font-size: 0.7rem; /* Aumenta el tamaño de la fuente del texto */
+  color: #000000; /* Color negro */
+}
+
+.input-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.table-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  min-width: 800px;
+}
+
+.table thead {
+  background-color: #4caf50;
+  color: white;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: #e0e0e0;
+  border-left: 3px solid #4caf50;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.input-cedula {
+  width: 100%;
+  max-width: 200px;
+}
+
+.input-cedula:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+input[type="number"], input[type="text"], input[type="email"], select {
+  width: 94% !important;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"], input[type="email"], select {
+  width: calc(100% - 20px) !important;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.btn-primary, .btn-success, .custom-button, .button-green, .smaller-button {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  vertical-align: middle;
+  width: auto;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-gray {
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+  color: #333;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.btn-success:hover {
+  background-color: #388e3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-black, .custom-button-black, .button-black {
+  background-color: black !important;
+  border-color: black !important;
+  color: white !important;
+  padding: 6px 20px !important;
+  font-size: 0.85rem !important;
+  width: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-black:hover, .custom-button-black:hover, .button-black:hover {
+  background-color: #333 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Step-by-Step Wizard */
+.step-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  position: relative;
+  flex-wrap: nowrap; /* Mantener los pasos en una fila */
+  overflow-x: auto; /* Permitir desplazamiento horizontal en móviles */
+}
+
+.step-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background-color: #d3d3d3;
+  z-index: -1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.step .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.step .label {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.step.active .circle {
+  background-color: #9cba3b;
+  box-shadow: 0 0 8px rgba(156, 186, 59, 0.6);
+}
+
+button:focus {
+  outline: none;
+}
+
+.form-check-label {
+  margin-left: 4px;
+}
+
+
+@media (max-width: 768px) {
+  .step-container {
+    gap: 20px; /* Reducir el espacio entre los pasos */
+  }
+
+  .step .circle {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .step .label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .step-container {
+    gap: 10px; /* Ajuste adicional para pantallas pequeñas */
+  }
+
+  .step .circle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .step .label {
+    font-size: 10px;
+  }
+
+  .input-section {
+    padding: 15px;
+  }
+
+  .btn-primary, .btn-success, .custom-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-container {
+    gap: 30px; /* Espaciado ajustado para móviles pequeños */
+  }
+
+  .step .circle {
+    width: 35px;
+    height: 35px;
+    font-size: 10px;
+  }
+
+  .step .label {
+    font-size: 9px;
+  }
+
+  .table th, .table td {
+    font-size: 7px;
+    padding: 9px;
+  }
+
+  .table-container {
+    padding-bottom: 10px;
+  }
+}
+
+
+/* Overlay to cover the entire page */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Gray background with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it sits above other content */
+}
+
+/* Loader styling */
+.loader {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  color: white;
+  animation: l1 1s linear infinite alternate;
+}
+
+.loader:before {
+  content: " LEONISA ... ";
+}
+
+@keyframes l1 {
+  to {
+    opacity: 0;
+  }
+}
+
+
+.credit-options {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las opciones salten a la siguiente línea si es necesario */
+  gap: 30px; /* Aumentar el espacio entre las opciones */
+}
+
+.credit-option {
+  flex: 1 1 calc(25% - 30px); /* Cada opción ocupa el 25% del ancho con un mayor margen */
+  min-width: 200px; /* Asegura que las opciones no se vuelvan demasiado pequeñas */
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .credit-option {
+    flex: 1 1 calc(33.333% - 30px); /* En pantallas medianas, mostrar 3 opciones por fila */
+  }
+}
+
+@media (max-width: 768px) {
+  .credit-option {
+    flex: 1 1 calc(50% - 30px); /* En pantallas pequeñas, mostrar 2 opciones por fila */
+  }
+}
+
+@media (max-width: 576px) {
+  .credit-option {
+    flex: 1 1 100%; /* En pantallas muy pequeñas, mostrar una opción por fila */
+  }
+}
+
+
+
+.otros-cobros-servicios {
+  width: 100%;
+  overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+  -webkit-overflow-scrolling: touch; /* Mejora la experiencia de desplazamiento en dispositivos táctiles */
+}
+
+.otros-cobros-servicios table {
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+  min-width: 600px; /* Asegura que la tabla no se colapse demasiado en pantallas pequeñas */
+}
+
+.otros-cobros-servicios td, 
+.otros-cobros-servicios th {
+  padding: 12px; /* Añade espacio alrededor del texto para mejor legibilidad */
+  font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+}
+
+@media (max-width: 768px) {
+  .otros-cobros-servicios td, .otros-cobros-servicios th {
+    font-size: 12px; /* Reducir aún más el tamaño de la fuente en pantallas más pequeñas */
+    padding: 10px; /* Espaciado ajustado para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .otros-cobros-servicios table {
+    width: 100%; /* Mantener la tabla en su contenedor */
+  }
+
+  .otros-cobros-servicios td, .otros-cobros-servicios th {
+    font-size: 11px; /* Fuente aún más pequeña para pantallas muy pequeñas */
+    padding: 8px;
+  }
+}
+
+
+.smaller-button {
+  font-size: 0.75rem; /* Tamaño de la fuente para pantallas más grandes */
+  padding: 6px 10px;  /* Padding más compacto */
+  width: auto;        /* Ajusta el ancho al contenido */
+  border-radius: 4px; /* Bordes redondeados */
+  min-width: 120px;   /* Evitar que los botones se hagan demasiado pequeños */
+}
+
+@media (max-width: 576px) {
+  .smaller-button {
+    font-size: 0.65rem;  /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    padding: 4px 8px;    /* Reducir el padding para que los botones sean más pequeños */
+    min-width: 100px;    /* Asegurar que los botones no sean demasiado pequeños en móviles */
+  }
+}
+
+.smaller-centered-button {
+  font-size: 0.75rem; /* Tamaño más pequeño de la fuente */
+  padding: 6px 12px;  /* Padding más compacto */
+  width: auto;        /* El ancho se ajusta al contenido */
+  display: inline-block; /* Asegura que el botón no ocupe todo el ancho del contenedor */
+  border-radius: 4px;  /* Bordes ligeramente redondeados */
+  min-width: 150px;    /* Asegura que el botón no sea demasiado pequeño */
+}
+
+@media (max-width: 576px) {
+  .smaller-centered-button {
+    font-size: 0.65rem; /* Fuente más pequeña en pantallas pequeñas */
+    padding: 4px 10px;  /* Padding más reducido para móviles */
+  }
+}
+
+.input-section {
+  background-color: #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  padding: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.input-section h5 {
+  font-size: 1.25rem !important;
+  color: #333 !important;
+  margin-bottom: 15px !important;
+}
+
+.form-group {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.d-flex.flex-md-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.form-control {
+  max-width: 300px !important; /* Ajuste de tamaño máximo */
+}
+
+.input-section .error-message {
+  font-size: 0.85rem !important;
+  color: #d9534f !important;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin-top: 5px !important;
+  white-space: nowrap !important; /* Asegura que el texto se mantenga en una línea */
+}
+
+.form-control:focus {
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5) !important;
+  outline: none !important;
+}
+
+label {
+  white-space: nowrap !important; /* Fuerza que las etiquetas queden en una sola línea */
+}
+
+.form-check-label {
+  margin-left: 4px !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .d-flex.flex-md-row {
+    flex-direction: column !important; /* Los elementos se apilan en una columna en pantallas pequeñas */
+    align-items: flex-start !important; /* Alinea a la izquierda en lugar de centrado */
+  }
+
+  .w-49 {
+    width: 100% !important; /* Asegura que los inputs ocupen todo el ancho disponible */
+  }
+
+  .me-3 {
+    margin-right: 0 !important; /* Quita el margen derecho en dispositivos móviles */
+  }
+
+  .btn-success {
+    width: 100% !important; /* El botón ocupa el 100% del ancho en pantallas móviles */
+    margin-top: 10px !important; /* Añade un margen superior para separar el botón de los inputs */
+  }
+
+  .form-control {
+    width: 100% !important; /* Los inputs ocupan todo el ancho en dispositivos móviles */
+    max-width: none !important;
+  }
+
+  label {
+    margin-bottom: 5px !important; /* Añade un margen inferior para etiquetas en móviles */
+  }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  .input-section h5 {
+    font-size: 1rem !important; /* Reduce el tamaño del título en pantallas más pequeñas */
+  }
+
+  .form-control {
+    font-size: 0.9rem !important; /* Ajusta el tamaño de la fuente de los inputs */
+  }
+
+  .btn-success {
+    font-size: 0.85rem !important; /* Reduce el tamaño del botón en pantallas pequeñas */
+  }
+}
+
+
+.table thead th {
+  font-size: 0.85rem !important; /* Tamaño de letra más pequeño */
+  font-weight: normal !important; /* Quitar negrita */
+  color: #ffffff !important; /* Asegura que el color de texto siga siendo blanco */
+}
+
+.table tbody td {
+  font-size: 0.85rem !important; /* Tamaño de letra para las celdas del cuerpo */
+}
+
+.table tfoot td {
+  font-size: 0.85rem !important; /* Ajustar tamaño de letra en el pie de la tabla */
+  font-weight: bold !important; /* Mantener en negrita el total */
+}
+
+.table thead {
+  background-color: #343a40 !important; /* Asegura que el fondo de los encabezados siga oscuro */
+}
+
+
+
+.custom-form-section {
+  background-color: #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  padding: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.custom-form-section h5 {
+  font-size: 1.25rem !important;
+  color: #333 !important;
+  margin-bottom: 15px !important;
+  text-align: left;
+}
+
+.custom-form-section .form-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.custom-form-section .form-group label {
+  font-weight: 600 !important;
+  width: 200px; /* Controla el ancho de las etiquetas para que estén alineadas */
+  margin-right: -86px; /* Menos espaciado entre la etiqueta y el input */
+  // text-align: right;
+}
+
+.custom-form-section .form-group select,
+.custom-form-section .form-group input {
+  width: 400px; /* Ajusta el ancho de los inputs */
+  padding: 8px !important;
+  font-size: 0.8rem !important;
+  border-radius: 4px !important;
+  border: 1px solid #ced4da !important;
+  transition: border-color 0.3s, box-shadow 0.3s !important;
+}
+
+.custom-form-section .form-group select:focus,
+.custom-form-section .form-group input:focus {
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5) !important;
+}
+
+.custom-form-section .text-danger {
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+
+  font-size: 0.875rem !important;
+  color: #dc3545 !important;
+}
+
+@media (max-width: 768px) {
+  .custom-form-section .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .custom-form-section .form-group label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .custom-form-section .form-group select,
+  .custom-form-section .form-group input {
+    width: 100%;
+  }
+}
+
+.is-invalid {
+  border-color: #dc3545 !important; /* Borde rojo para campos inválidos */
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5) !important; /* Efecto de sombra en rojo */
+}
+
+
+.accion-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #dc3545; /* Color inicial rojo */
+  transition: color 0.2s ease-in-out;
+}
+
+.accion-centered:hover {
+  color: #a71d2a; /* Color más oscuro al pasar el cursor */
+}
+
+.campaign-message {
+  top: 10px;
+  left: 15px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  font-size: 1.1rem;
+  z-index: 100;
+}
+
+
+@media (max-width: 768px) {
+  .campaign-message {
+    font-size: 1rem; /* Reduce el tamaño de la fuente en pantallas medianas */
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .campaign-message {
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.button-gray {
+  background-color: #333333 !important; /* Color de fondo gris */
+  border-color: #333333 !important;
+  color: #ffffff; /* Color del texto */
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-gray:hover {
+  background-color: #bfbfbf; /* Color gris más oscuro en hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el cursor */
+}
+
+

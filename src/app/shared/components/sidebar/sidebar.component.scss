@@ -1,0 +1,7 @@
+*, h1, h2, h3, h4, h5, h6, p, span, a {
+    text-transform: none !important;
+}
+
+.main-header-left *, .sidebar *, .sidebar-menu * {
+    text-transform: none !important;
+}

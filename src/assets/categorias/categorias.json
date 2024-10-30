@@ -1,0 +1,390 @@
+[
+    {
+        "id": 1,
+        "nombre": "Electrodomésticos",
+        "subcategorias": [
+            {
+                "id": 101,
+                "nombre": "Electrodomésticos de hogar"
+            },
+            {
+                "id": 102,
+                "nombre": "Electrodomésticos de belleza"
+            },
+            {
+                "id": 103,
+                "nombre": "Lavadoras y secadoras"
+            },
+            {
+                "id": 104,
+                "nombre": "Refrigeración"
+            },
+            {
+                "id": 105,
+                "nombre": "Otros electrodomésticos"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Tecnología",
+        "subcategorias": [
+            {
+                "id": 201,
+                "nombre": "Audio y video"
+            },
+            {
+                "id": 202,
+                "nombre": "Televisores"
+            },
+            {
+                "id": 203,
+                "nombre": "Computadores y tablets"
+            },
+            {
+                "id": 204,
+                "nombre": "Celulares y accesorios"
+            },
+            {
+                "id": 205,
+                "nombre": "Videojuegos"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Hogar",
+        "subcategorias": [
+            {
+                "id": 301,
+                "nombre": "Decoración"
+            },
+            {
+                "id": 302,
+                "nombre": "Muebles"
+            },
+            {
+                "id": 303,
+                "nombre": "Cocina"
+            },
+            {
+                "id": 304,
+                "nombre": "Ropa de hogar"
+            },
+            {
+                "id": 305,
+                "nombre": "Colchones"
+            },
+            {
+                "id": 306,
+                "nombre": "Jardinería"
+            },
+            {
+                "id": 307,
+                "nombre": "Fiestas"
+            },
+            {
+                "id": 308,
+                "nombre": "Aseo hogar"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Deportes",
+        "subcategorias": [
+            {
+                "id": 401,
+                "nombre": "Gimnasio en casa"
+            },
+            {
+                "id": 402,
+                "nombre": "Ciclismo"
+            },
+            {
+                "id": 403,
+                "nombre": "Ropa deportiva hombre"
+            },
+            {
+                "id": 404,
+                "nombre": "Ropa deportiva mujer"
+            },
+            {
+                "id": 405,
+                "nombre": "Deportes acuáticos"
+            },
+            {
+                "id": 406,
+                "nombre": "Fútbol"
+            },
+            {
+                "id": 407,
+                "nombre": "Baloncesto y voleibol"
+            },
+            {
+                "id": 408,
+                "nombre": "Deportes de raquetas"
+            },
+            {
+                "id": 409,
+                "nombre": "Patinaje"
+            },
+            {
+                "id": 410,
+                "nombre": "Accesorios deportivos"
+            },
+            {
+                "id": 411,
+                "nombre": "Otros deportes"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Moda",
+        "subcategorias": [
+            {
+                "id": 501,
+                "nombre": "Ropa interior hombre"
+            },
+            {
+                "id": 502,
+                "nombre": "Ropa interior mujer"
+            },
+            {
+                "id": 503,
+                "nombre": "Ropa exterior hombre"
+            },
+            {
+                "id": 504,
+                "nombre": "Ropa exterior mujer"
+            },
+            {
+                "id": 505,
+                "nombre": "Niño"
+            },
+            {
+                "id": 506,
+                "nombre": "Niña"
+            },
+            {
+                "id": 507,
+                "nombre": "Accesorios"
+            },
+            {
+                "id": 508,
+                "nombre": "Disfraces"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Salud y Belleza",
+        "subcategorias": [
+            {
+                "id": 601,
+                "nombre": "Cuidado facial"
+            },
+            {
+                "id": 602,
+                "nombre": "Cuidado corporal"
+            },
+            {
+                "id": 603,
+                "nombre": "Cuidado capilar"
+            },
+            {
+                "id": 604,
+                "nombre": "Maquillaje"
+            },
+            {
+                "id": 605,
+                "nombre": "Perfumes"
+            },
+            {
+                "id": 606,
+                "nombre": "Droguería"
+            },
+            {
+                "id": 607,
+                "nombre": "Suplementos"
+            },
+            {
+                "id": 608,
+                "nombre": "Otros productos de salud y belleza"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Mascotas",
+        "subcategorias": [
+            {
+                "id": 701,
+                "nombre": "Alimento"
+            },
+            {
+                "id": 702,
+                "nombre": "Juguetes"
+            },
+            {
+                "id": 703,
+                "nombre": "Higiene"
+            },
+            {
+                "id": 704,
+                "nombre": "Accesorios de mascotas"
+            },
+            {
+                "id": 705,
+                "nombre": "Seguros de mascotas"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "nombre": "Bonos",
+        "subcategorias": [
+            {
+                "id": 801,
+                "nombre": "Bonos en experiencias y entretenimiento"
+            },
+            {
+                "id": 802,
+                "nombre": "Bonos en restaurantes"
+            },
+            {
+                "id": 803,
+                "nombre": "Bonos de moda y accesorios"
+            },
+            {
+                "id": 804,
+                "nombre": "Otros bonos"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "nombre": "Juguetería",
+        "subcategorias": [
+            {
+                "id": 901,
+                "nombre": "Juegos de mesa"
+            },
+            {
+                "id": 902,
+                "nombre": "Juguetes musicales"
+            },
+            {
+                "id": 903,
+                "nombre": "Juguetes para bebés"
+            },
+            {
+                "id": 904,
+                "nombre": "Otros juguetes"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "nombre": "Bebés",
+        "subcategorias": [
+            {
+                "id": 1001,
+                "nombre": "Ropa de bebés"
+            },
+            {
+                "id": 1002,
+                "nombre": "Coches y cunas"
+            },
+            {
+                "id": 1003,
+                "nombre": "Sillas, caminadores y cargadores"
+            },
+            {
+                "id": 1004,
+                "nombre": "Lactancia y alimentación"
+            },
+            {
+                "id": 1005,
+                "nombre": "Higiene y salud de bebés"
+            },
+            {
+                "id": 1006,
+                "nombre": "Gimnasios y estimulación para bebés"
+            },
+            {
+                "id": 1007,
+                "nombre": "Otros productos para bebés"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "nombre": "Libros y papelería",
+        "subcategorias": [
+            {
+                "id": 1101,
+                "nombre": "Libros y revistas"
+            },
+            {
+                "id": 1102,
+                "nombre": "Productos de papelería"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "nombre": "Ferretería",
+        "subcategorias": [
+            {
+                "id": 1201,
+                "nombre": "Herramientas"
+            },
+            {
+                "id": 1202,
+                "nombre": "Accesorios de ferretería"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "nombre": "Vehículos",
+        "subcategorias": [
+            {
+                "id": 1301,
+                "nombre": "Carros"
+            },
+            {
+                "id": 1302,
+                "nombre": "Motos"
+            },
+            {
+                "id": 1303,
+                "nombre": "Limpieza de vehículos"
+            },
+            {
+                "id": 1304,
+                "nombre": "Otros productos para vehículos"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "nombre": "Viajes",
+        "subcategorias": [
+            {
+                "id": 1401,
+                "nombre": "Vuelos"
+            },
+            {
+                "id": 1402,
+                "nombre": "Hoteles"
+            },
+            {
+                "id": 1403,
+                "nombre": "Otros productos de viaje"
+            }
+        ]
+    }
+]
