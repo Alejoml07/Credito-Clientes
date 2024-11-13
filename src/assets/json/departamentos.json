@@ -1044,10 +1044,17 @@
     },
     {
         "id": 25,
-        "departamento": "San Andr\u00e9s y Providencia",
+        "departamento": "San Andr\u00e9s",
         "ciudades": [
             "Providencia y Santa Catalina Islas",
             "San Andr\u00e9s"
+        ]
+    },
+    {
+        "id": 32,
+        "departamento": "Providencia",
+        "ciudades": [
+            "Providencia y Santa Catalina Islas"
         ]
     },
     {

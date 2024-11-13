@@ -33,12 +33,15 @@ getProducto(jsonData: any): Observable<any> {
   return this.post<any>('/cupoejecutiva/rest/v1/CreditosDLM/GetProducto',jsonData);
 }
 
-
-
-
 desencriptarJson(jsonData: any): Observable<any> {
   return this.post<any>('/cupoejecutiva/rest/v1/CreditosDLM/DesencriptarJson',jsonData);
 }
+
+validarIVA(jsonData: any): Observable<any> {
+  return this.post<any>('/cupoejecutiva/rest/v1/CreditosDLM/ValidarIVA',jsonData);
+}
+
+
 
 
 }

@@ -20,7 +20,8 @@ export class AuthInterceptor implements HttpInterceptor {
         'https://apigatewayleonisatest.azurewebsites.net/api/Productos/GetBannerByEvent',
         'https://apigatewayleonisatest.azurewebsites.net/api/Productos/AddBannerEventos',
         'https://apigatewayleonisatest.azurewebsites.net/api/fidelizacion/AddEventoContenido',
-        'https://apigatewayleonisatest.azurewebsites.net/api/fidelizacion/GetEventoContenidoByEvento'
+        'https://apigatewayleonisatest.azurewebsites.net/api/fidelizacion/GetEventoContenidoByEvento',
+        'https://omnicanalidad.leonisa360.com/cupoejecutiva/rest/v1/CreditosDLM/DesencriptarJson',
 
     ];
 
@@ -32,7 +33,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if (user) {
         const authReq = request.clone({
-            headers: request.headers.set('Authorization', `Bearer ${user}`)
+            headers: request.headers.set('Authorization', `${user}`)
         });
 
         return next.handle(authReq).pipe(
